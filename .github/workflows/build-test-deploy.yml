@@ -7,7 +7,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - name: use node.js
-        uses: actions/setup-node@v3
+        uses: actions/upload-artifact@master
         with:
           node-version: '18.x'
       - run: npm install
@@ -38,7 +38,7 @@ jobs:
       - run: npm install
       - run: npm run build 
       - name: upload artifacts
-        uses: actions/deploy-pages@v4
+        uses: actions/upload-pages-artifact@v1
         with: 
           path: "./next"
       - name: deploy
